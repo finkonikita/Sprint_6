@@ -1,6 +1,26 @@
-# Sprint6
-# Sprint_6
-# Sprint_6
-# Sprint_6
-# Sprint_6
-# Sprint_6
+Проект 6 спринта Яндекс Практикум
+
+Структура проекта
+allure_results - папка с результатами тестирования
+locators - пакет с локаторами
+pages - пакет с методами тестирование
+tests - пакет, с тестами
+data - файл с данными
+conftest.py - фикстуры
+requirements - файл с необходимыми библиотеками
+Запуск автотестов
+Установка зависимостей
+
+pip install -r requirements.txt
+
+Запуск автотестов без отчета
+
+pytest -v
+
+Запуск автотестов и создание отчета о тестировании в Allure
+
+pytest --alluredir=allure_results
+
+Для генерации отчета из результатов тестов выполните команду
+
+allure serve allure_results
