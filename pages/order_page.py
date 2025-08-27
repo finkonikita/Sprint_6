@@ -76,6 +76,10 @@ class OrderPage(BasePage):
     def check_success_order(self):
         return self.find_element(OrderPageLocators.ORDER_SUCCESS_WINDOW).text
 
+    @allure.step('Открытие страницы заказа')
+    def open_order_page(self):
+        self.open_url(Urls.ORDER_PAGE)
+
 
     def create_order(self, name, last_name, address, station, phone, date, term, color, comments):
         self.set_name(name)
