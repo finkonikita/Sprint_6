@@ -1,6 +1,8 @@
+import allure
 from locators.home_page_locators import HomePageLocators
 from pages.base_page import BasePage
-import allure
+from utils.urls import Urls
+
 
 
 
@@ -33,6 +35,14 @@ class HomePage(BasePage):
     def open_home_page(self):
         self.open_url(Urls.HOME_PAGE)
         self.wait_element_visibility_of_element_located(HomePageLocators.COOKIES_BTN)
+
+    @allure.step('Переход по URL')
+    def wait_navigating_url(self, url):
+        self.wait_url_contains(url)
+
+    @allure.step('Переключение вкладки')
+    def tab_switch(self):
+        self.driver.switch_to.window(self.driver.window_handles[-1])
 
     @allure.step("Возвращает URL текущей страницы")
     def get_current_page_url(self):
