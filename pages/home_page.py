@@ -37,3 +37,11 @@ class HomePage(BasePage):
     @allure.step("Возвращает URL текущей страницы")
     def get_current_page_url(self):
         return self.driver.current_url
+
+    @allure.step('Клик на кнопку cookies')
+    def click_cookies_button(self):
+        self.click_to_element(HomePageLocators.COOKIES_BTN)
+
+    @allure.step('Прокрутка к последнему вопросу')
+    def scroll_to_last_question(self):
+        self.scroll(HomePageLocators.LAST_QUESTION)
